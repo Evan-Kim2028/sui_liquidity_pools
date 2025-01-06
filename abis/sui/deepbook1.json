@@ -1,0 +1,368 @@
+{
+  "distribution": {
+    "fileFormatVersion": 6,
+    "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+    "name": "distribution",
+    "friends": [],
+    "structs": {
+      "AirdropPool": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "balance",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270",
+                      "module": "deep",
+                      "name": "DEEP",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "hashes",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "vec_set",
+                "name": "VecSet",
+                "typeArguments": [
+                  "Address"
+                ]
+              }
+            }
+          },
+          {
+            "name": "recipients",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "table",
+                "name": "Table",
+                "typeArguments": [
+                  "Address",
+                  "U64"
+                ]
+              }
+            }
+          },
+          {
+            "name": "total_pool_amount",
+            "type": "U64"
+          }
+        ]
+      },
+      "DEEPAirdrop": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "amount",
+            "type": "U64"
+          }
+        ]
+      },
+      "DEEPWrapper": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "name": "balance",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "balance",
+                "name": "Balance",
+                "typeArguments": [
+                  {
+                    "Struct": {
+                      "address": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270",
+                      "module": "deep",
+                      "name": "DEEP",
+                      "typeArguments": []
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "DISTRIBUTION": {
+        "abilities": {
+          "abilities": [
+            "Drop"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "dummy_field",
+            "type": "Bool"
+          }
+        ]
+      },
+      "SetupCap": {
+        "abilities": {
+          "abilities": [
+            "Key"
+          ]
+        },
+        "typeParameters": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "Struct": {
+                "address": "0x2",
+                "module": "object",
+                "name": "UID",
+                "typeArguments": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    "exposedFunctions": {
+      "amount_claimed": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Reference": {
+              "Struct": {
+                "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+                "module": "distribution",
+                "name": "DEEPAirdrop",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          "U64"
+        ]
+      },
+      "distribute": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+                "module": "distribution",
+                "name": "AirdropPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Vector": "Address"
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": []
+      },
+      "fund_pool": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+                "module": "distribution",
+                "name": "AirdropPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "coin",
+              "name": "Coin",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270",
+                    "module": "deep",
+                    "name": "DEEP",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "return": []
+      },
+      "prepare_recipients": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+                "module": "distribution",
+                "name": "AirdropPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Vector": "Address"
+          },
+          {
+            "Vector": "U64"
+          }
+        ],
+        "return": []
+      },
+      "setup": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+                "module": "distribution",
+                "name": "AirdropPool",
+                "typeArguments": []
+              }
+            }
+          },
+          {
+            "Struct": {
+              "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+              "module": "distribution",
+              "name": "SetupCap",
+              "typeArguments": []
+            }
+          },
+          {
+            "Vector": "Address"
+          }
+        ],
+        "return": []
+      },
+      "unwrap": {
+        "visibility": "Public",
+        "isEntry": false,
+        "typeParameters": [],
+        "parameters": [
+          {
+            "Struct": {
+              "address": "0x61c9c39fd86185ad60d738d4e52bd08bda071d366acde07e07c3916a2d75a816",
+              "module": "distribution",
+              "name": "DEEPWrapper",
+              "typeArguments": []
+            }
+          },
+          {
+            "MutableReference": {
+              "Struct": {
+                "address": "0x2",
+                "module": "tx_context",
+                "name": "TxContext",
+                "typeArguments": []
+              }
+            }
+          }
+        ],
+        "return": [
+          {
+            "Struct": {
+              "address": "0x2",
+              "module": "coin",
+              "name": "Coin",
+              "typeArguments": [
+                {
+                  "Struct": {
+                    "address": "0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270",
+                    "module": "deep",
+                    "name": "DEEP",
+                    "typeArguments": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
