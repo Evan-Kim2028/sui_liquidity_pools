@@ -1,0 +1,17 @@
+project: sui_liquidity_pools
+contracts:
+  - chain: sui_mainnet
+    address: "0xc4049b2d1cc0f6e017fda8260e4377cecd236bd7f56a54fee120816e72e2e0dd"
+    name: aftermath_v2
+  - chain: sui_mainnet
+    address: "0xefe170ec0be4d762196bedecd7a065816576198a6527c99282a2551aaa7da38c"
+    name: aftermath_v1
+  - chain: sui_mainnet
+    address: "0xb58b33843a07c2a7cf2707ca3ebf00d6de2ae1e5a273172c3615e9fd76d7e186"
+    name: cetus
+  - chain: sui_mainnet
+    address: "0x89253eb9ca5bf424a118bfc1a172bbc2dd39d38becd00e5cbf24b87ee828bce5"
+    name: turbos12
+  - chain: sui_mainnet
+    address: "0x84d1ad43e95e9833670fcdb2f2d9fb7618fe1827e3908f2c2bb842f3dccb80af"
+    name: turbos
