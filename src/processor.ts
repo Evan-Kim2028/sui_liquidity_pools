@@ -1,3 +1,3 @@
-import { initAFPoolsProcessor } from "./poolProcessors/poolCreated.js";
+import { initPoolsCreatedProcessor } from "./poolProcessors/poolCreated.js";
 
-initAFPoolsProcessor();
+initPoolsCreatedProcessor();
