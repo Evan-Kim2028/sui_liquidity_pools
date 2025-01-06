@@ -1,3 +1,3 @@
-import { initAFPoolsProcessor } from "./poolProcessors/aftermath.js";
+import { initAFPoolsProcessor } from "./poolProcessors/poolCreated.js";
 
 initAFPoolsProcessor();
