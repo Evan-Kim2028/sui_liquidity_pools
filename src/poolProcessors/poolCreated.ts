@@ -300,8 +300,8 @@ export function initPoolsCreatedProcessor() {
       .onTimeInterval(async (self, _, ctx) => {
           ctx.eventLogger.emit("turbos_pool_states", {
             id: self.data_decoded.id,
-            coin_a: self.data_decoded.coin_a,
-            coin_b: self.data_decoded.coin_b,
+            coin_a: self.data_decoded.coin_a.toString(),
+            coin_b: self.data_decoded.coin_b.toString(),
             protocol_fees_a: self.data_decoded.protocol_fees_a,
             protocol_fees_b: self.data_decoded.protocol_fees_b,
             sqrt_price: self.data_decoded.sqrt_price,
